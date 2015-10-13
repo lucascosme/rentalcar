@@ -24,6 +24,9 @@ public class HomeController {
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public String save(ModelMap model) {
 		clientSaverService.save();
+		model.addAttribute("warning");
 		return view();
 	}
+	
+
 }

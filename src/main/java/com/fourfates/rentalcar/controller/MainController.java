@@ -16,10 +16,11 @@ public class MainController {
 	private static final String LOGIN_PAGE = "login";
 	private static final String NOT_FOUND_PAGE = "404";
 	private static final String ACCESS_DENIED_PAGE = "403";
+	private static final String HEADER = "header";
 
 	private static final String HOME_PAGE = "redirect:controller/user/home";
-	
-	@RequestMapping(value = "/")
+
+	@RequestMapping(value = "/home")
 	public String home() {
 		return HOME_PAGE;
 	}
@@ -33,7 +34,7 @@ public class MainController {
 		model.setViewName(LOGIN_PAGE);
 		return model;
 	}
-	
+
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public ModelAndView accesssDenied() {
 		ModelAndView model = new ModelAndView();
@@ -45,9 +46,19 @@ public class MainController {
 		model.setViewName(ACCESS_DENIED_PAGE);
 		return model;
 	}
-	
+
+	@RequestMapping("/")
+	public String index() {
+		return HEADER;
+	}
+
 	@RequestMapping(value = "/404", method = RequestMethod.GET)
 	public String pageNotFound() {
 		return NOT_FOUND_PAGE;
+	}
+
+	@RequestMapping("/testando")
+	public String viewTestando() {
+		return "cadastroCliente";
 	}
 }

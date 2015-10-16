@@ -16,7 +16,7 @@ public class MainController {
 	private static final String LOGIN_PAGE = "login";
 	private static final String NOT_FOUND_PAGE = "404";
 	private static final String ACCESS_DENIED_PAGE = "403";
-	private static final String HEADER = "header";
+	private static final String HOME = "home";
 
 	private static final String HOME_PAGE = "redirect:controller/user/home";
 
@@ -49,16 +49,11 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String index() {
-		return HEADER;
+		return HOME;
 	}
 
 	@RequestMapping(value = "/404", method = RequestMethod.GET)
 	public String pageNotFound() {
 		return NOT_FOUND_PAGE;
-	}
-
-	@RequestMapping("/testando")
-	public String viewTestando() {
-		return "cadastroCliente";
 	}
 }

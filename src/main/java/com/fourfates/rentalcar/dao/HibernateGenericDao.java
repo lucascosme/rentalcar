@@ -57,10 +57,6 @@ public class HibernateGenericDao<T extends DomainModel> extends HibernateDaoSupp
 	public List<T> findByCriterion(List<Criterion> criterions, int batchSize) {
 		return getCriteria(criterions, batchSize).list();
 	}
-	
-	public List<T> findByCriterion(Criterion criterion) {
-    	return getCriteria().add(criterion).list();
-    }
     
 	public T findOneByCriterion(List<Criterion> criterions){
     	return (T) getCriteria(criterions).uniqueResult();

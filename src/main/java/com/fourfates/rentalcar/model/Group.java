@@ -1,5 +1,6 @@
 package com.fourfates.rentalcar.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -11,7 +12,7 @@ public class Group extends DomainModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	@Column
 	private String categoria;
 	
 	public String getCategoria() {

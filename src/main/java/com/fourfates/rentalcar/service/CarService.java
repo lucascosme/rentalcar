@@ -32,8 +32,8 @@ public class CarService {
 		car.setKm(km);
 		car.setTarifa_kmlivre(kmLivre);
 		car.setTarifa_kmcontrolado(kmControlado);
-		car.setStatus(CarStatus.DISPONIVEL.toString());
-		
+		car.setStatus(CarStatus.DISPONIVEL);
+				
 		carDao.save(car);
 	}
 

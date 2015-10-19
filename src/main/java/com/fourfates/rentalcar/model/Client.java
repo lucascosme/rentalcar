@@ -30,6 +30,7 @@ public class Client extends DomainModel {
 	private String estadoEmissor;
 	@Column
 	private String validadeCarteira;
+	
 	public String getNome() {
 		return nome;
 	}

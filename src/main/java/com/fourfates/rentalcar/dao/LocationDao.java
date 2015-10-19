@@ -6,8 +6,8 @@ import com.fourfates.rentalcar.model.Location;
 
 @Repository
 public class LocationDao extends HibernateGenericDao<Location> {
-	
-	public LocationDao(){
+
+	public LocationDao() {
 		super(Location.class);
 	}
 }

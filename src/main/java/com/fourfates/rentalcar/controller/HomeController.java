@@ -27,6 +27,4 @@ public class HomeController {
 		model.addAttribute("warning");
 		return view();
 	}
-	
-
 }

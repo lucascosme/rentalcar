@@ -170,7 +170,7 @@
 						data-target="#demo2"><i class="glyphicon glyphicon-credit-card"></i>
 							Locação <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo2" class="collapse">
-							<li><a href="#">Nova Locação</a></li>
+							<li><a href="/rentalcar/controller/user/newLocationView">Nova Locação</a></li>
 							<li><a href="#">Devolução</a></li>
 						</ul>
 					</li>

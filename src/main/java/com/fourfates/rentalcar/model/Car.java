@@ -1,9 +1,14 @@
 package com.fourfates.rentalcar.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fourfates.rentalcar.controller.model.CarStatus;
 
 @Entity
 @Table(name="car")
@@ -11,24 +16,37 @@ public class Car extends DomainModel {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Column
 	private String chassi;
+	@Column
 	private String placa;
+	@Column
 	private String cidade;
+	@Column
 	private double km;
+	@Column
 	private String estado;
+	@Column
 	private String modelo;
+	@Column
 	private String fabricante;
+	@Column
 	private double tarifa_kmlivre;
+	@Column
 	private double tarifa_kmcontrolado;
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Group grupo;
+	@Column
 	private String cor;
-	private String Status;
+	@Column
+	@Enumerated(value = EnumType.STRING)
+	private CarStatus Status;
 	
-	public String getStatus() {
+	
+	public CarStatus getStatus() {
 		return Status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(CarStatus status) {
 		Status = status;
 	}
 	public String getChassi() {
@@ -96,5 +114,9 @@ public class Car extends DomainModel {
 	}
 	public void setCor(String cor) {
 		this.cor = cor;
+	}
+	
+	public String getValueGroup(Group group){
+		return group.getCategoria();
 	}
 }

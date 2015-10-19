@@ -1,8 +1,5 @@
 package com.fourfates.rentalcar.controller;
 
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +43,4 @@ public class CarController {
 		}
 		return carView(model);
 	}
-public static void main(String[] args) {
-	System.out.println(LocalDateTime.now());
-}
 }

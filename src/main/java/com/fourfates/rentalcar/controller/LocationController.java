@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fourfates.rentalcar.controller.model.CarStatus;
 import com.fourfates.rentalcar.controller.model.LocationBean;
+import com.fourfates.rentalcar.controller.model.LocationStatus;
+import com.fourfates.rentalcar.controller.model.Message;
+import com.fourfates.rentalcar.controller.model.MessageKey;
 import com.fourfates.rentalcar.dao.CarDao;
 import com.fourfates.rentalcar.dao.ClientDao;
 import com.fourfates.rentalcar.dao.LocationDao;
@@ -85,20 +88,22 @@ public class LocationController {
 	
 	@RequestMapping("/reportView")
 	public String reportView(ModelMap model){
-		List<Location> listLocation = locationDao.findAll();
+		List<Location> listLocation = locationDao.findByStatus(LocationStatus.PAGO);
 		model.addAttribute("listLocation", listLocation);
 		return "reportConsult";
 	}
 	
 	@RequestMapping("/devolutionRegisterView")
 	public String devolutionRegisterView(ModelMap model){
-		List<Location> listLocation = locationDao.findAll();
+		List<Location> listLocation = locationDao.findByStatus(LocationStatus.PAGO);
 		model.addAttribute("listLocation", listLocation);
 		return "devolutionRegister";
 	}
 	
 	@RequestMapping("/devolutionRegister")
-	public void devolutionRegister(ModelMap model, @RequestParam("carId")Long carId){
-		locationFacade.callUpdateStatusCar(carId);
+	public String devolutionRegister(ModelMap model,@RequestParam("locationId")Long locationId){
+		locationFacade.callUpdateStatusCarAndStatusLocation(locationId);
+		model.addAttribute(MessageKey.SUCESS.getKey(), Message.DEVOLUTION_SUCESS.getKey());
+		return devolutionRegisterView(model);
 	}
 }

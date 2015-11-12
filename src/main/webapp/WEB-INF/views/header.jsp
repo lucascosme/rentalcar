@@ -152,10 +152,14 @@
 						data-target="#demo"><i class="glyphicon glyphicon-floppy-disk"></i>
 							Cadastrar <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo" class="collapse">
-							<li><a href="/rentalcar/controller/user/carRegisterView">Automovel</a></li>
+							<sec:authorize access="hasRole('ADMIN')">
+								<li><a href="/rentalcar/controller/user/carRegisterView">Automovel</a></li>
+							</sec:authorize>
 							<li><a href="/rentalcar/controller/user/clientRegisterView">Cliente</a></li>
-							<li><a href="/rentalcar/controller/user/groupRegisterView">Grupo</a></li>
-							<li><a href="/rentalcar/controller/user/userRegisterView">Usuário</a></li>
+							<sec:authorize access="hasRole('ADMIN')">
+								<li><a href="/rentalcar/controller/user/groupRegisterView">Grupo</a></li>
+								<li><a href="/rentalcar/controller/user/userRegisterView">Usuário</a></li>
+							</sec:authorize>
 						</ul></li>
 					<li><a href="javascript:;" data-toggle="collapse"
 						data-target="#demo1"><i class="glyphicon glyphicon-search"></i>
@@ -163,8 +167,10 @@
 						<ul id="demo1" class="collapse">
 							<li><a href="/rentalcar/controller/user/clientConsultView">Clientes</a></li>
 							<li><a href="/rentalcar/controller/user/carAvailabilityView">Disponibilidade</a></li>
-							<li><a href="/rentalcar/controller/user/groupConsultView">Grupo</a></li>
-							<li><a href="/rentalcar/controller/user/userConsultView">Usuário</a></li>
+							<sec:authorize access="hasRole('ADMIN')">
+								<li><a href="/rentalcar/controller/user/groupConsultView">Grupo</a></li>
+								<li><a href="/rentalcar/controller/user/userConsultView">Usuário</a></li>
+							</sec:authorize>
 						</ul></li>
 					<li><a href="javascript:;" data-toggle="collapse"
 						data-target="#demo2"><i class="glyphicon glyphicon-credit-card"></i>

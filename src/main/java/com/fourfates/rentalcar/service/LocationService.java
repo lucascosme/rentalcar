@@ -57,7 +57,7 @@ public class LocationService {
 		return locationBean;
 	}
 
-	public void updateStatusCar(Long carId) {
-		carDao.update(carId, CarStatus.DISPONIVEL);
+	public void updateStatusCarAndStatusLocation(Long locationId) {
+		locationDao.update(locationId, LocationStatus.DEVOLVIDO);
 	}
 }

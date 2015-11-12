@@ -33,9 +33,11 @@
 	</div>
 </c:if>	
 
+
 <h1>Devolução</h1>
 				<h4>Selecione a baixo qual automovel deseja fazer a devolução</h4>
     			<hr />
+    			
     			
     			<table class="table table-hover table-striped">
     				<thead>
@@ -48,7 +50,7 @@
     				</thead>
     				<tbody>
 						<c:forEach var="listLocations" items="${listLocation}">
-	    					<tr onclick="window.document.location='/rentalcar/controller/user/devolutionRegister?carId=${listLocations.car.id}&${_csrf.parameterName}=${_csrf.token}';" style="cursor: Pointer">
+	    					<tr onclick="window.document.location='/rentalcar/controller/user/devolutionRegister?locationId=${listLocations.id}&${_csrf.parameterName}=${_csrf.token}';" style="cursor: Pointer">
 	    						<td>${listLocations.client.nome}</td>
 	    						<td>${listLocations.locationStatus}</td>
 	    						<td>${listLocations.car.modelo}</td>

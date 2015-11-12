@@ -9,7 +9,8 @@ public enum Message {
 	PAYMENT_SUCESS("Pagamento realizado com sucesso."),
 	GROUP_SUCESS("Grupo salvo com sucesso."), 
 	EXCLUDED_CLIENT_SUCESS("Cliente excluido com sucesso."),
-	UPDATED_CLIENT_SUCESS("Cliente alterado com sucesso.");
+	UPDATED_CLIENT_SUCESS("Cliente alterado com sucesso."), 
+	DEVOLUTION_SUCESS("Devolução realizada com sucesso.");
 	
 	private String key;
 	

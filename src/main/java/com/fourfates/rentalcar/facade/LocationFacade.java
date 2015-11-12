@@ -15,8 +15,8 @@ public class LocationFacade {
 		return locationService.saveLocation(car,idclient,tipoTarifa,localLocacao,localDevolucao,tarifaDias,tarifaKm);
 	}
 
-	public void callUpdateStatusCar(Long carId) {
-		locationService.updateStatusCar(carId);
+	public void callUpdateStatusCarAndStatusLocation(Long locationId) {
+		locationService.updateStatusCarAndStatusLocation(locationId);
 		
 	}
 }

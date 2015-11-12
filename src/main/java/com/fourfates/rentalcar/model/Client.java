@@ -2,7 +2,11 @@ package com.fourfates.rentalcar.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
+
+import com.fourfates.rentalcar.controller.model.ClientStatus;
 
 @Entity
 @Table(name="client")
@@ -10,6 +14,9 @@ public class Client extends DomainModel {
 
 	private static final long serialVersionUID = 1L;
 
+	@Column
+	@Enumerated(EnumType.STRING)
+	private ClientStatus status;
 	@Column
 	private String nome;
 	@Column
@@ -31,6 +38,12 @@ public class Client extends DomainModel {
 	@Column
 	private String validadeCarteira;
 	
+	public ClientStatus getStatus() {
+		return status;
+	}
+	public void setStatus(ClientStatus status) {
+		this.status = status;
+	}
 	public String getNome() {
 		return nome;
 	}

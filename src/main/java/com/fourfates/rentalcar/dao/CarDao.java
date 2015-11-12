@@ -24,4 +24,10 @@ public class CarDao extends HibernateGenericDao<Car> {
 		);
 		return findByCriterion(criterion);
 	}
+	
+	public void update(Long idCar, CarStatus carStatus) {
+		Car car = findById(idCar);
+		car.setStatus(carStatus);
+		update(car);
+	}
 }

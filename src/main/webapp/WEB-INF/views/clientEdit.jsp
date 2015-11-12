@@ -35,15 +35,16 @@
 	</div>
 </c:if>	
 
-<h1>Cadastro de cliente</h1>
+<h1>Dados do cliente</h1>
 <hr />
-<form action="saveClient?${_csrf.parameterName}=${_csrf.token}" method="post">
+<form action="editClient?${_csrf.parameterName}=${_csrf.token}" method="post">
+	<input type="hidden" name="clientId" value="${client.id}">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
 				<label for="exampleInputEmail1">Nome</label> <input type="text"
 					class="form-control" id="exampleInputNome"
-					placeholder="Nome Completo" name="nome">
+					value="${client.nome}" name="nome">
 			</div>
 		</div>
 	</div>
@@ -52,14 +53,14 @@
 			<div class="form-group">
 				<label for="exampleInputPassword1">CPF</label> <input
 					type="text" class="form-control" id="exampleInputCpf"
-					placeholder="EX:42302885798" name="cpf">
+					value="${client.cpf}" name="cpf">
 			</div>
 		</div>
 		<div class="col-md-2">
 			<div class="form-group">
 				<label for="exampleInputRg">Data de Nascimento</label> <input
 					type="text" class="form-control" id="exampleInputNascimento"
-					placeholder="EX:23/03/2000" name="nascimento">
+					value="${client.dataNasc}" name="nascimento">
 			</div>
 		</div>
 	</div>
@@ -68,27 +69,14 @@
 			<div class="form-group">
 				<label for="exampleInputRg">RG</label> <input type="text"
 					class="form-control" id="exampleInputRg"
-					placeholder="EX:459683997" name="rg">
+					value="${client.rg}" name="rg">
 			</div>
 		</div>
 		<div class="col-md-2">
 			<div class="form-group">
 				<label for="exampleInputRg">Estado Emissor</label> <input
 					type="text" class="form-control" id="exampleInputEmissor"
-					placeholder="SP" name="emissor">
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-2">
-			<div class="form-group">
-				<h5>
-					<b>Sexo</b>
-				</h5>
-				<input type="radio" name="sexo" id="optionsRadios1"
-					value="feminino" checked>Feminino<br> <input
-					type="radio" name="sexo" id="optionsRadios1"
-					value="masculino" checked>Masculino
+					value="${client.estadoEmissor}" name="emissor">
 			</div>
 		</div>
 	</div>
@@ -97,14 +85,14 @@
 			<div class="form-group">
 				<label for="exampleInputRg">E-mail</label> <input type="text"
 					class="form-control" id="exampleInputEmail"
-					placeholder="nome@hotmail.com" name="email">
+					value="${client.email}" name="email">
 			</div>
 		</div>
 		<div class="col-md-2">
 			<div class="form-group">
 				<label for="exampleInputRg">Telefone</label> <input type="text"
 					class="form-control" id="exampleInputTelefone"
-					placeholder="EX:44493454" name="telefone">
+					value="${client.telefone}" name="telefone">
 			</div>
 		</div>
 	</div>
@@ -113,14 +101,14 @@
 			<div class="form-group">
 				<label for="exampleInputRg">Validade da carteira</label> <input
 					type="text" class="form-control" id="exampleInputValidade"
-					placeholder="EX:00/00/0000" name="carteira">
+					value="${client.validadeCarteira}" name="carteira">
 			</div>
 		</div>
 		<div class="col-md-2">
 			<div class="form-group">
 				<label for="exampleInputRg">Numero do registro</label> <input
 					type="text" class="form-control" id="exampleInputRegistro"
-					placeholder="EX:3454" name="registro">
+					value="${client.numeroRegistro}" name="registro">
 			</div>
 		</div>
 	</div>
@@ -131,9 +119,9 @@
 				<button class="btn btn-primary" type="button">Cancelar</button>
 			</div>
 		</div>
-		<div class="col-md-1">
+		<div class="col-md-2">
 			<div class="form-group">
-				<button class="btn btn-primary" type="submit">Gravar</button>
+				<button class="btn btn-primary" type="submit">Alterar</button>
 			</div>
 		</div>
 	</div>

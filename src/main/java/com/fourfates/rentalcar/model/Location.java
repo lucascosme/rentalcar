@@ -1,12 +1,14 @@
 package com.fourfates.rentalcar.model;
 
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fourfates.rentalcar.controller.model.LocationStatus;
 
 @Entity
 @Table(name="location")
@@ -18,13 +20,12 @@ public class Location extends DomainModel{
 	private static final long serialVersionUID = 1L;
 	
 	@Column
-	private int codigoLocacao;
+	@Enumerated(value=EnumType.STRING)
+	private LocationStatus locationStatus;
 	@Column
-	private String modelo;
+	private String dataLocacao;
 	@Column
-	private Calendar dataHoraLocacao;
-	@Column
-	private Calendar dataHoraDevolucao;
+	private String dataDevolucao;
 	@Column
 	private String localLocacao;
 	@Column
@@ -35,30 +36,24 @@ public class Location extends DomainModel{
 	private Client client;
 	@OneToOne(fetch=FetchType.EAGER)
 	private Car car;
-	
-	public int getCodigoLocacao() {
-		return codigoLocacao;
+
+	public LocationStatus getLocationStatus() {
+		return locationStatus;
 	}
-	public void setCodigoLocacao(int codigoLocacao) {
-		this.codigoLocacao = codigoLocacao;
+	public void setLocationStatus(LocationStatus locationStatus) {
+		this.locationStatus = locationStatus;
 	}
-	public String getModelo() {
-		return modelo;
+	public String getDataLocacao() {
+		return dataLocacao;
 	}
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setDataLocacao(String dataLocacao) {
+		this.dataLocacao = dataLocacao;
 	}
-	public Calendar getDataHoraLocacao() {
-		return dataHoraLocacao;
+	public String getDataDevolucao() {
+		return dataDevolucao;
 	}
-	public void setDataHoraLocacao(Calendar dataHoraLocacao) {
-		this.dataHoraLocacao = dataHoraLocacao;
-	}
-	public Calendar getDataHoraDevolucao() {
-		return dataHoraDevolucao;
-	}
-	public void setDataHoraDevolucao(Calendar dataHoraDevolucao) {
-		this.dataHoraDevolucao = dataHoraDevolucao;
+	public void setDataDevolucao(String dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
 	}
 	public String getLocalLocacao() {
 		return localLocacao;

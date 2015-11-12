@@ -5,7 +5,11 @@ public enum Message {
 	SAVE_CLIENT_SUCESS("Cliente salvo com sucesso."),
 	SAVE_CLIENT_ERRO("Erro ao salvar o cliente."), 
 	SAVE_CAR_SUCESS("Automóvel Salvo com sucesso."), 
-	SAVE_CAR_ERROR("Erro ao savar o automóvel.");
+	SAVE_CAR_ERROR("Erro ao savar o automóvel."),
+	PAYMENT_SUCESS("Pagamento realizado com sucesso."),
+	GROUP_SUCESS("Grupo salvo com sucesso."), 
+	EXCLUDED_CLIENT_SUCESS("Cliente excluido com sucesso."),
+	UPDATED_CLIENT_SUCESS("Cliente alterado com sucesso.");
 	
 	private String key;
 	

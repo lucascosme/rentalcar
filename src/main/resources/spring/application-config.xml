@@ -22,14 +22,14 @@
 							http://www.springframework.org/schema/task/spring-task-3.0.xsd">
     
     <!-- Importação das propriedades da aplicação -->	
-    <context:property-placeholder location="file:${RENTAL_CAR_FILE_PROPERTY_PATH}/rentalcar.properties"/>
+   <!-- <context:property-placeholder location="file:${RENTAL_CAR_FILE_PROPERTY_PATH}/rentalcar.properties"/> --> 
  
 	<!-- Hibernate 4 - DataSource Bean definition-->
 	<bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://${db.host}:${db.port}/${db.dbname}" />
-        <property name="username" value="${db.username}" />
-        <property name="password" value="${db.password}" />
+        <property name="url" value="jdbc:mysql://localhost:3306/rentalcar" />
+        <property name="username" value="root" />
+        <property name="password" value="root" />
     </bean>
 
     <!-- Hibernate 4 - SessionFactory Bean definition -->  

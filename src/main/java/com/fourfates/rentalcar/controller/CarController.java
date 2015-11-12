@@ -10,20 +10,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fourfates.rentalcar.controller.model.Message;
 import com.fourfates.rentalcar.controller.model.MessageKey;
-import com.fourfates.rentalcar.dao.GroupDao;
+import com.fourfates.rentalcar.dao.CarDao;
 import com.fourfates.rentalcar.facade.CarFacade;
+import com.fourfates.rentalcar.facade.GroupFacade;
+import com.fourfates.rentalcar.model.Car;
 import com.fourfates.rentalcar.model.Group;
 
 @Controller
 @RequestMapping("/controller/user")
 public class CarController {
 	
-	@Autowired GroupDao grupDao;
+	@Autowired GroupFacade groupFacade;
 	@Autowired CarFacade carFacade;
+	@Autowired CarDao carDao;
 	
 	@RequestMapping("/carRegisterView")
 	public String carView(ModelMap model){
-		List<Group> group = grupDao.findAll();
+		List<Group> group = groupFacade.getGroup();
 		model.addAttribute("listGroup", group);
 		return "carRegister";
 	}
@@ -42,5 +45,12 @@ public class CarController {
 			model.addAttribute(MessageKey.ERROR.getKey(), Message.SAVE_CAR_ERROR.getKey());
 		}
 		return carView(model);
+	}
+	
+	@RequestMapping("/carAvailabilityView")
+	public String carAvailability(ModelMap model){
+		List<Car> listCar = carDao.findAll();
+		model.addAttribute("listCar", listCar);
+		return "carConsult";
 	}
 }

@@ -154,29 +154,30 @@
 						<ul id="demo" class="collapse">
 							<li><a href="/rentalcar/controller/user/carRegisterView">Automovel</a></li>
 							<li><a href="/rentalcar/controller/user/clientRegisterView">Cliente</a></li>
-							<li><a href="#">Grupo</a></li>
-							<li><a href="#">Usuário</a></li>
+							<li><a href="/rentalcar/controller/user/groupRegisterView">Grupo</a></li>
+							<li><a href="/rentalcar/controller/user/userRegisterView">Usuário</a></li>
 						</ul></li>
 					<li><a href="javascript:;" data-toggle="collapse"
 						data-target="#demo1"><i class="glyphicon glyphicon-search"></i>
 							Consultar <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo1" class="collapse">
-							<li><a href="#">Clientes</a></li>
-							<li><a href="#">Disponibilidade</a></li>
-							<li><a href="#">Grupo</a></li>
-							<li><a href="#">Usuário</a></li>
+							<li><a href="/rentalcar/controller/user/clientConsultView">Clientes</a></li>
+							<li><a href="/rentalcar/controller/user/carAvailabilityView">Disponibilidade</a></li>
+							<li><a href="/rentalcar/controller/user/groupConsultView">Grupo</a></li>
+							<li><a href="/rentalcar/controller/user/userConsultView">Usuário</a></li>
 						</ul></li>
 					<li><a href="javascript:;" data-toggle="collapse"
 						data-target="#demo2"><i class="glyphicon glyphicon-credit-card"></i>
 							Locação <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo2" class="collapse">
 							<li><a href="/rentalcar/controller/user/newLocationView">Nova Locação</a></li>
-							<li><a href="#">Devolução</a></li>
+							<li><a href="/rentalcar/controller/user/devolutionRegisterView">Devolução</a></li>
 						</ul>
 					</li>
-					<li class="active"><a href="index.html"><i
-							class="glyphicon glyphicon-list-alt"></i> Relatorio</a></li>
-					
+					<sec:authorize access="hasRole('ADMIN')">
+						<li><a href="/rentalcar/controller/user/reportView"><i
+								class="glyphicon glyphicon-list-alt"></i>Relatório</a></li>
+					</sec:authorize>	
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

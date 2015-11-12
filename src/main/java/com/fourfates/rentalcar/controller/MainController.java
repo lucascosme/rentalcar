@@ -16,11 +16,10 @@ public class MainController {
 	private static final String LOGIN_PAGE = "login";
 	private static final String NOT_FOUND_PAGE = "404";
 	private static final String ACCESS_DENIED_PAGE = "403";
-	private static final String HOME = "home";
 
 	private static final String HOME_PAGE = "redirect:controller/user/home";
 
-	@RequestMapping(value = "/home")
+	@RequestMapping(value = "/")
 	public String home() {
 		return HOME_PAGE;
 	}
@@ -45,11 +44,6 @@ public class MainController {
 		}
 		model.setViewName(ACCESS_DENIED_PAGE);
 		return model;
-	}
-
-	@RequestMapping("/")
-	public String index() {
-		return HOME;
 	}
 
 	@RequestMapping(value = "/404", method = RequestMethod.GET)

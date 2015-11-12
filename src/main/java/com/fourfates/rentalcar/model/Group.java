@@ -5,16 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="grup")
+@Table(name="cargroup")
 public class Group extends DomainModel {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+
 	@Column
 	private String categoria;
-	
+
 	public String getCategoria() {
 		return categoria;
 	}
